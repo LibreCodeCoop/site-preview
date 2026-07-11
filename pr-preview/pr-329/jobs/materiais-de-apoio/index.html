@@ -222,14 +222,12 @@
 </footer>
 
   <!-- JavaScript Libraries -->
-  <script src="/site-preview/pr-preview/pr-329/assets/build/js/main.js?id=969877b5e4d8b9c251041d7b1ff71d15" type="text/javascript"></script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="/site-preview/pr-preview/pr-329/assets/build/js/main.js?id=01b633df9a992fd36fd2bd20515fbc5b" type="text/javascript"></script>
   
-  <!-- GSAP (animation engine) + LibreCode motion -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-  <script>if (window.gsap && window.ScrollToPlugin) gsap.registerPlugin(ScrollToPlugin);</script>
+  <script type="module" src="/site-preview/pr-preview/pr-329/assets/build/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="/site-preview/pr-preview/pr-329/assets/build/ionicons/ionicons.js"></script>
+
+  <!-- Must load after the bundle above, which exposes the GSAP globals it uses -->
   <script src="/site-preview/pr-preview/pr-329/assets/js/librecode-motion.js"></script>
 
     <script>
@@ -249,7 +247,8 @@
   var lightboxInlineIframe = GLightbox({ selector: '.glightbox4' });
 </script>
 
-    <!-- Chatwoot widget -->
+    
+        <!-- Chatwoot widget -->
     <script>
       (function (documentRef, scriptTagName) {
         var chatwootBaseUrl = "https://chatwoot.librecode.coop";
@@ -266,5 +265,5 @@
         };
       })(document, "script");
     </script>
-</body>
+    </body>
 </html>
