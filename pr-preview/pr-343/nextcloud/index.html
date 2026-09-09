@@ -5,7 +5,7 @@
   <title>Nextcloud — Nuvem Privada e Colaborativa | LibreCode</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="keywords" content="software livre, cooperativa tecnologia, nuvem privada, ERP, CRM, automação de marketing, hospedagem Brasil, LGPD, soberania digital, suporte em português">
-  <meta name="description" content="Arquivos, documentos, agenda, chamadas e colaboração em uma nuvem privada com hospedagem no Brasil, suporte em português e dados sob o seu controle.">
+  <meta name="description" content="Nextcloud gerenciado pela LibreCode — nuvem privada com hospedagem no Brasil, suporte em português e código aberto. Arquivos, agenda, chamadas e colaboração sob o seu controle.">
   <meta name="author" content="LibreCode Cooperativa">
   <meta name="robots" content="index, follow">
 
@@ -14,15 +14,16 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="/site-preview/pr-preview/pr-343/nextcloud">
+  <meta property="og:site_name" content="LibreCode">
   <meta property="og:title" content="Nextcloud — Nuvem Privada e Colaborativa | LibreCode">
-  <meta property="og:description" content="Arquivos, documentos, agenda, chamadas e colaboração em uma nuvem privada com hospedagem no Brasil, suporte em português e dados sob o seu controle.">
-      <meta property="og:image" content="/site-preview/pr-preview/pr-343/assets/images/logo.png"/>
+  <meta property="og:description" content="Nextcloud gerenciado pela LibreCode — nuvem privada com hospedagem no Brasil, suporte em português e código aberto. Arquivos, agenda, chamadas e colaboração sob o seu controle.">
+      <meta property="og:image" content="/site-preview/pr-preview/pr-343/assets/images/logo/librecode_large.png"/>
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nextcloud — Nuvem Privada e Colaborativa | LibreCode">
-  <meta name="twitter:description" content="Arquivos, documentos, agenda, chamadas e colaboração em uma nuvem privada com hospedagem no Brasil, suporte em português e dados sob o seu controle.">
-  <meta name="twitter:image" content="/site-preview/pr-preview/pr-343/assets/images/logo.png">
+  <meta name="twitter:description" content="Nextcloud gerenciado pela LibreCode — nuvem privada com hospedagem no Brasil, suporte em português e código aberto. Arquivos, agenda, chamadas e colaboração sob o seu controle.">
+  <meta name="twitter:image" content="/site-preview/pr-preview/pr-343/assets/images/logo/librecode_large.png">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -67,8 +68,41 @@
   <!-- Libraries CSS Files -->
   <link href="/site-preview/pr-preview/pr-343/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var storageKey = 'lc-theme';
+      var storedTheme;
+
+      try { storedTheme = localStorage.getItem(storageKey); } catch (error) {}
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        var toggles = document.querySelectorAll('[data-theme-toggle]');
+        for (var index = 0; index < toggles.length; index++) {
+          toggles[index].setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        }
+      }
+
+      applyTheme(storedTheme === 'light' ? 'light' : 'dark');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        applyTheme(root.getAttribute('data-theme'));
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!event.target || !event.target.closest || !event.target.closest('[data-theme-toggle]')) {
+          return;
+        }
+        var theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(theme);
+        try { localStorage.setItem(storageKey, theme); } catch (error) {}
+      });
+    })();
+  </script>
+
   <!-- Main Stylesheet File -->
-  <link rel="stylesheet" href="/site-preview/pr-preview/pr-343/assets/build/css/main.css?id=3d7adfb9a41945f1e42586a340da8158">
+  <link rel="stylesheet" href="/site-preview/pr-preview/pr-343/assets/build/css/main.css?id=4d2789a8098ac3ed42d9e006de49d2a8">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
@@ -95,17 +129,23 @@
                 <img src="/site-preview/pr-preview/pr-343/assets/images/logo/librecode.png" alt="LibreCode" class="img-fluid">
             </a>
         </div>
-        <nav class="main-nav d-none d-lg-block" aria-label="Navegação principal">
-            <ul>
-                <li><a href="/site-preview/pr-preview/pr-343/#about">Quem somos</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/#why-us">Soluções</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/#clients">Clientes</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/#apoie">Apoie</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/#contact">Contato</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/posts">Blog</a></li>
-                <li><a href="/site-preview/pr-preview/pr-343/jobs">Coopere Conosco</a></li>
-            </ul>
-        </nav>
+        <div class="lc-header__actions">
+            <nav class="main-nav d-none d-lg-block" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="/site-preview/pr-preview/pr-343/#about">Quem somos</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/#why-us">Soluções</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/#clients">Clientes</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/#apoie">Apoie</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/#contact">Contato</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/posts">Blog</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-343/jobs">Coopere Conosco</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="lc-theme-toggle" data-theme-toggle aria-pressed="false" title="Alternar tema" aria-label="Alternar entre tema claro e escuro">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </button>
+        </div>
     </div>
 </header>
     
@@ -425,15 +465,11 @@
         <p class="lc-eyebrow lc-eyebrow--index"><b>04</b> / Planos</p>
         <h2>Nuvem soberana para sua organização</h2>
         <p>Privacidade, código aberto e gestão cooperativa em planos que crescem com a sua equipe.</p>
-        <span class="nc-pricing__setup">
-          <ion-icon name="sparkles-outline" aria-hidden="true"></ion-icon>
-          Sem taxa de implantação
-        </span>
       </div>
 
       <div class="nc-plan-table-wrap" data-reveal="up" tabindex="0" role="region" aria-label="Comparação dos planos Nextcloud">
         <table class="nc-plan-table">
-          <caption>Recursos e valores dos planos Nextcloud da LibreCode</caption>
+          <caption>Planos Nextcloud da LibreCode</caption>
           <thead>
             <tr>
               <th scope="col">Recursos</th>
@@ -525,41 +561,21 @@
               <td><ion-icon name="checkmark-circle" aria-label="Incluído"></ion-icon></td>
             </tr>
           </tbody>
-          <tbody class="nc-plan-table__details">
-            <tr>
-              <th scope="row">Armazenamento</th>
-              <td><strong>10 GB</strong></td>
-              <td><strong>120 GB</strong></td>
-              <td><strong>800 GB</strong></td>
-            </tr>
-            <tr>
-              <th scope="row">Mensalidade no plano anual</th>
-              <td><strong>R$ 150,00</strong></td>
-              <td><strong>R$ 1.000,00</strong></td>
-              <td><strong>R$ 4.700,00</strong></td>
-            </tr>
-            <tr>
-              <th scope="row">Mensalidade no plano mensal</th>
-              <td><strong>R$ 157,50</strong></td>
-              <td><strong>R$ 1.100,00</strong></td>
-              <td><strong>R$ 5.170,00</strong></td>
-            </tr>
-          </tbody>
           <tfoot>
             <tr>
-              <th scope="row">Escolha seu plano</th>
-              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn lc-btn--ghost">Assinar Básico</a></td>
-              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn">Assinar Pro</a></td>
-              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn lc-btn--ghost">Falar sobre Empresas</a></td>
+              <th scope="row">Fale conosco</th>
+              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn lc-btn--ghost">Saiba mais</a></td>
+              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn">Saiba mais</a></td>
+              <td><a href="/site-preview/pr-preview/pr-343/contato" class="lc-btn lc-btn--ghost">Saiba mais</a></td>
             </tr>
           </tfoot>
         </table>
       </div>
 
       <p class="nc-pricing__note" data-reveal="up">
-        Todos os planos permitem usuários ilimitados. Você gerencia livremente como o armazenamento disponível
-        é distribuído e quais limites cada usuário terá. Precisa de uma configuração específica?
-        <a href="/site-preview/pr-preview/pr-343/contato">Fale com a LibreCode</a>.
+        Todos os planos incluem usuários ilimitados, armazenamento escalonável e suporte em português.
+        Cada organização tem necessidades diferentes —
+        <a href="/site-preview/pr-preview/pr-343/contato">fale com a LibreCode</a> para montar o plano ideal.
       </p>
     </div>
   </section>
