@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Alternativa ao Microsoft 365: e-mail e nuvem sob seu controle</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="keywords" content="software livre, cooperativa tecnologia, nuvem privada, ERP, CRM, automação de marketing, hospedagem Brasil, LGPD, soberania digital, suporte em português">
+  <meta name="description" content="Falhas no Outlook e quedas no Microsoft 365 expõem os riscos de depender de um único fornecedor. Veja como migrar para uma nuvem privada segura no Brasil.">
+  <meta name="author" content="LibreCode Cooperativa">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="/site-preview/pr-preview/pr-414/posts/alternativa-ao-microsoft-365-como-manter-sua-empresa-operando-sem-depender-de-um-unico-fornecedor">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/site-preview/pr-preview/pr-414/posts/alternativa-ao-microsoft-365-como-manter-sua-empresa-operando-sem-depender-de-um-unico-fornecedor">
+  <meta property="og:site_name" content="LibreCode">
+  <meta property="og:title" content="Alternativa ao Microsoft 365: e-mail e nuvem sob seu controle">
+  <meta property="og:description" content="Falhas no Outlook e quedas no Microsoft 365 expõem os riscos de depender de um único fornecedor. Veja como migrar para uma nuvem privada segura no Brasil.">
+      <meta property="og:image" content="/site-preview/pr-preview/pr-414/assets/images/logo/librecode_large.png"/>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alternativa ao Microsoft 365: e-mail e nuvem sob seu controle">
+  <meta name="twitter:description" content="Falhas no Outlook e quedas no Microsoft 365 expõem os riscos de depender de um único fornecedor. Veja como migrar para uma nuvem privada segura no Brasil.">
+  <meta name="twitter:image" content="/site-preview/pr-preview/pr-414/assets/images/logo/librecode_large.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LibreCode",
+    "legalName": "LibreCode Cooperativa de Tecnologia",
+    "url": "https://librecode.coop",
+    "logo": "/assets/images/logo/librecode.png",
+    "description": "Cooperativa de tecnologia da informação especializada em desenvolvimento de soluções com licença livre",
+    "foundingDate": "2018",
+    "address": { "@type": "PostalAddress", "addressCountry": "BR" },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "availableLanguage": ["Portuguese", "English"]
+    },
+    "sameAs": [
+      "https://github.com/librecodecoop",
+      "https://www.linkedin.com/company/librecode/",
+      "https://t.me/LibreCodeCoop",
+      "https://www.instagram.com/librecodecoop/",
+      "https://www.facebook.com/librecodecoop/"
+    ],
+    "serviceType": [
+      "Software Development", "Cloud Hosting", "IT Consulting",
+      "Digital Signature Solutions", "CRM Solutions", "Marketing Automation"
+    ]
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link href="/site-preview/pr-preview/pr-414/assets/images/favico.png" rel="icon">
+  <link href="/site-preview/pr-preview/pr-414/assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Open+Sans:wght@300;400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/site-preview/pr-preview/pr-414/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var storageKey = 'lc-theme';
+      var storedTheme;
+
+      try { storedTheme = localStorage.getItem(storageKey); } catch (error) {}
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        var toggles = document.querySelectorAll('[data-theme-toggle]');
+        for (var index = 0; index < toggles.length; index++) {
+          toggles[index].setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+        }
+      }
+
+      applyTheme(storedTheme === 'light' ? 'light' : 'dark');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        applyTheme(root.getAttribute('data-theme'));
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!event.target || !event.target.closest || !event.target.closest('[data-theme-toggle]')) {
+          return;
+        }
+        var theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(theme);
+        try { localStorage.setItem(storageKey, theme); } catch (error) {}
+      });
+    })();
+  </script>
+
+  <!-- Main Stylesheet File -->
+  <link rel="stylesheet" href="/site-preview/pr-preview/pr-414/assets/build/css/main.css?id=d3c7fa2303983c6beab2c419b53737e8">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true;
+      g.src='https://matomo.librecode.coop/js/container_Ux1Y5m98_dev_08f02616a270a3d80b35beb7.js';
+      s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+
+</head>
+
+<body>
+    <a href="#main" class="lc-skip">Pular para o conteúdo</a>
+    <div class="lc-progress" aria-hidden="true"></div>
+    <header id="header" class="fixed-top">
+    <div class="container">
+        <div class="logo">
+            <a href="/site-preview/pr-preview/pr-414/" class="scrollto" aria-label="LibreCode — página inicial">
+                <img src="/site-preview/pr-preview/pr-414/assets/images/logo/librecode.png" alt="LibreCode" class="img-fluid">
+            </a>
+        </div>
+        <div class="lc-header__actions">
+            <nav class="main-nav d-none d-lg-block" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="/site-preview/pr-preview/pr-414/#about">Quem somos</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/#why-us">Soluções</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/#clients">Clientes</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/#apoie">Apoie</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/#contact">Contato</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/posts">Blog</a></li>
+                    <li><a href="/site-preview/pr-preview/pr-414/jobs">Coopere Conosco</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="lc-theme-toggle" data-theme-toggle aria-pressed="false" title="Alternar tema" aria-label="Alternar entre tema claro e escuro">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</header>
+    
+
+<section class="lc-pagehero lc-pagehero--article">
+    <div class="lc-pagehero__inner">
+        <p class="lc-eyebrow lc-hero__eyebrow" data-reveal="up">
+            <a href="/site-preview/pr-preview/pr-414/posts">← Blog</a>
+        </p>
+
+        <h1 class="lc-article__title" data-hero-title>
+            <span class="lc-line"><span>Alternativa ao Microsoft 365: como manter sua empresa operando sem depender de um único fornecedor</span></span>
+        </h1>
+
+        <div class="lc-article__meta" data-reveal="up">
+                            <img class="lc-article__avatar" src="/site-preview/pr-preview/pr-414/assets/images/logo/librecode_author.jpg" alt="" loading="lazy">
+                        <span class="lc-article__author">LibreCode</span>
+            <span class="lc-article__sep" aria-hidden="true">·</span>
+            <time datetime="2026-11-24">24 de novembro de 2026</time>
+                            <span class="lc-article__sep" aria-hidden="true">·</span>
+                <span>8 min de leitura</span>
+                    </div>
+    </div>
+</section>
+
+<main id="main">
+    <article class="lc-article lc-section--paper">
+        <div class="lc-article__banner" data-reveal="up">
+            <img src="/site-preview/pr-preview/pr-414/assets/images/logo/librecode.png" alt="Alternativa ao Microsoft 365: como manter sua empresa operando sem depender de um único fornecedor" loading="lazy">
+        </div>
+
+        <div class="lc-article__body" data-reveal="up">
+            <p>Quando o e-mail corporativo para de funcionar às dez da manhã de uma quarta-feira, a operação inteira trava. A diretoria começa a cobrar respostas pelo WhatsApp pessoal, propostas comerciais ficam presas na caixa de saída e reuniões com clientes são canceladas às pressas.</p>
+
+<p>Quem gerencia ambientes de TI ou responde pela operação de uma empresa viveu exatamente esse cenário na segunda semana de novembro de 2026. Em apenas quatro dias, dois episódios distintos atingiram o ecossistema da Microsoft. No dia 10, a fabricante liberou uma correção emergencial para a falha CVE-2026-124194 no Outlook, uma vulnerabilidade que já vinha sendo explorada em ataques reais para capturar credenciais de autenticação a partir de arquivos de mensagem maliciosos. Entre os dias 12 e 14, uma instabilidade global derrubou os serviços do Microsoft 365, tirando Outlook e Teams do ar em pleno horário comercial.</p>
+
+<p>Esses dois eventos expõem problemas de naturezas diferentes: o primeiro é uma brecha de segurança no software cliente; o segundo, uma falha de disponibilidade na nuvem do fornecedor. Mas ambos apontam para a mesma fragilidade estrutural dentro das organizações. Se a plataforma proprietária onde você hospeda toda a sua comunicação falhar amanhã, existe um plano B para manter o negócio rodando?</p>
+
+<h2>Quais são os riscos de depender apenas do Microsoft 365 ou Google Workspace?</h2>
+
+<p>Terceirizar toda a infraestrutura de comunicação para uma grande suíte em nuvem parece prático no início, mas cria um ponto único de falha sobre o qual a sua equipe de TI não tem ingerência alguma.</p>
+
+<p>Quando o ambiente de um provedor global sai do ar, não há servidor para reiniciar, rota alternativa para acionar nem técnico do outro lado da linha com autonomia para resolver o seu caso. Você entra em uma fila mundial de atendimento e aguarda o restabelecimento da rede.</p>
+
+<p>Além do impacto imediato na produtividade, existem três gargalos silenciosos nesse modelo fechado:</p>
+
+<ul>
+<li><strong>Exposição jurídica e adequação à LGPD:</strong> Empresas norte-americanas respondem ao CLOUD Act, legislação que permite o acesso a dados armazenados por essas companhias mesmo quando os servidores estão fora dos Estados Unidos. Para organizações brasileiras que lidam com contratos sensíveis, prontuários ou dados públicos, essa jurisdição externa complica a conformidade plena com a Lei Geral de Proteção de Dados.</li>
+<li><strong>Imprevisibilidade de custos e licenciamento:</strong> O orçamento de TI fica atrelado à variação cambial e a reajustes unilaterais por usuário. Recursos essenciais de segurança e auditoria costumam ficar restritos aos planos mais caros, inflacionando a fatura mensal conforme a equipe cresce.</li>
+<li><strong>Engessamento técnico:</strong> Você não pode auditar o código, adaptar fluxos internos ao seu ERP ou decidir a política de retenção de backups fora das regras impostas pelo fabricante.</li>
+</ul>
+
+<p>Vale fazer um esclarecimento técnico honesto: trocar o provedor de e-mail corporativo não elimina falhas em aplicativos instalados na máquina do usuário, como no caso recente do Outlook. Softwares clientes exigem atualização contínua e políticas rígidas de endpoint. A diferença real está na arquitetura de servidor e na autonomia para isolar incidentes, acionar contingências e manter o controle sobre onde cada dado está gravado.</p>
+
+<h2>Como funciona uma alternativa ao Microsoft 365 em nuvem privada?</h2>
+
+<p>Uma alternativa ao Microsoft 365 baseada em software livre substitui o aluguel de licenças fechadas por um ambiente dedicado, hospedado em servidores no Brasil ou na infraestrutura própria da empresa, onde os dados e o código pertencem integralmente à organização.</p>
+
+<p>Mais do que substituir apenas o e-mail e o armazenamento de arquivos, essa arquitetura permite consolidar praticamente toda a pilha de softwares de gestão, marketing e atendimento da empresa em um único ecossistema soberano, eliminando dezenas de assinaturas avulsas. Na LibreCode — cooperativa brasileira de tecnologia fundada em 2017 e responsável por projetos críticos em instituições como a Fiocruz —, estruturamos e gerenciamos ambientes corporativos completos sob medida:</p>
+
+<table>
+<thead>
+<tr>
+  <th>Frente de trabalho</th>
+  <th>Ferramenta proprietária</th>
+  <th>Solução livre gerenciada</th>
+  <th>Como funciona na operação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>E-mail corporativo</td>
+  <td>Exchange / Outlook Web</td>
+  <td>Servidor de e-mail dedicado</td>
+  <td>Caixas postais com domínio próprio, políticas antispam customizadas, criptografia e compatibilidade total com qualquer aplicativo de e-mail ou celular.</td>
+</tr>
+<tr>
+  <td>Arquivos e nuvem</td>
+  <td>OneDrive / Google Drive</td>
+  <td>Nextcloud</td>
+  <td>Armazenamento em nuvem privada, sincronização de pastas, controle granular de permissões e edição simultânea de documentos e planilhas.</td>
+</tr>
+<tr>
+  <td>Reuniões e chat</td>
+  <td>Microsoft Teams / Zoom</td>
+  <td>Nextcloud Talk / Jitsi</td>
+  <td>Videoconferências em servidor próprio, compartilhamento de tela e canais de mensagens internos sem tráfego por servidores de terceiros.</td>
+</tr>
+<tr>
+  <td>Assinatura digital</td>
+  <td>DocuSign / Adobe Sign</td>
+  <td>LibreSign</td>
+  <td>Plataforma integrada para assinatura eletrônica e digital de contratos com validade jurídica e conformidade com padrões ICP-Brasil.</td>
+</tr>
+<tr>
+  <td>Relacionamento (CRM)</td>
+  <td>Dynamics / Salesforce</td>
+  <td>SuiteCRM</td>
+  <td>Gestão de funil comercial, histórico de clientes e automação de vendas sem cobrança de licença por usuário.</td>
+</tr>
+<tr>
+  <td>Automação de marketing</td>
+  <td>RD Station / Mailchimp</td>
+  <td>Mautic</td>
+  <td>Disparos de e-mail marketing, nutrição de leads, fluxos de automação e criação de landing pages hospedadas na infraestrutura da empresa.</td>
+</tr>
+<tr>
+  <td>Analytics web</td>
+  <td>Google Analytics</td>
+  <td>Matomo</td>
+  <td>Rastreamento de tráfego e conversão em sites com 100% de propriedade sobre os dados e total aderência à LGPD, sem envio de informações para terceiros.</td>
+</tr>
+<tr>
+  <td>Pesquisas e formulários</td>
+  <td>Google Forms / Typeform</td>
+  <td>LimeSurvey</td>
+  <td>Criação de pesquisas internas, avaliações e formulários avançados com armazenamento soberano das respostas.</td>
+</tr>
+<tr>
+  <td>Gestão financeira</td>
+  <td>Conta Azul / Omie</td>
+  <td>Akaunting</td>
+  <td>Controle financeiro, fluxo de caixa e gestão contábil online integrados ao ambiente da organização.</td>
+</tr>
+<tr>
+  <td>Controle de horas</td>
+  <td>Clockify / Toggl</td>
+  <td>Kimai</td>
+  <td>Apontamento de horas trabalhadas por projeto, equipe ou cliente para gestão de produtividade e faturamento.</td>
+</tr>
+<tr>
+  <td>Encurtador de URLs</td>
+  <td>Bitly</td>
+  <td>YOURLS</td>
+  <td>Encurtador de links próprio, sob o domínio oficial da marca, com métricas de cliques centralizadas.</td>
+</tr>
+<tr>
+  <td>Ensino e treinamento</td>
+  <td>Plataformas EAD fechadas</td>
+  <td>Moodle</td>
+  <td>Ambiente completo de ensino a distância para universidades corporativas, onboarding de equipes e cursos online.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Como é feita a migração de e-mail corporativo e arquivos sem parar a empresa?</h2>
+
+<p>O maior receio de qualquer diretor de TI ao considerar a saída do Microsoft 365 é o trauma da migração: perder histórico de mensagens antigas, quebrar permissões de pastas ou deixar a equipe dias sem trabalhar.</p>
+
+<p>Quando o projeto é conduzido por uma equipe especializada, a transição acontece de forma paralela e transparente:</p>
+
+<ol>
+<li><strong>Mapeamento e dimensionamento:</strong> Levantamos o volume real de caixas postais, o espaço ocupado em disco, as regras de encaminhamento e as integrações críticas já existentes na empresa.</li>
+<li><strong>Implantação em ambiente paralelo:</strong> O novo servidor de e-mail e a instância do Nextcloud são configurados, testados e validados antes de qualquer alteração no apontamento público do domínio.</li>
+<li><strong>Sincronização histórica:</strong> Todas as mensagens antigas, pastas e arquivos compartilhados são transferidos de forma automatizada, preservando a estrutura original que os colaboradores já conhecem.</li>
+<li><strong>Virada de chave assistida:</strong> A alteração de DNS ocorre em janela programada, geralmente fora do horário comercial, com acompanhamento direto dos engenheiros para garantir que a equipe chegue no dia seguinte operando normalmente.</li>
+</ol>
+
+<h2>Segurança e disponibilidade dependem de arquitetura, não de promessas</h2>
+
+<p>Nenhuma infraestrutura conectada à internet está livre de tentativas de ataque ou falhas de hardware. Desconfie de qualquer fornecedor que prometa um “e-mail que nunca cai”.</p>
+
+<p>O que diferencia uma operação vulnerável de uma operação resiliente é a qualidade da arquitetura desenhada para ela e a proximidade de quem administra o ambiente. Em um projeto de nuvem privada gerenciada, você define o nível de redundância, a frequência dos backups externos e o plano de recuperação de desastres conforme a criticidade do seu negócio.</p>
+
+<p>E quando surge uma dúvida técnica ou um incidente urgente, você não abre um ticket genérico em inglês para esperar dias por uma resposta padrão. Você conversa diretamente com os especialistas que implementaram a sua infraestrutura e conhecem a fundo a regra de negócio da sua empresa.</p>
+
+<h2>Quer avaliar o nível de dependência da sua infraestrutura atual?</h2>
+
+<p>Os incidentes recentes envolvendo o Outlook e o Microsoft 365 são um convite prático para revisar a continuidade operacional do seu negócio. Recuperar o controle sobre os dados corporativos, garantir conformidade real com a LGPD e eliminar a dependência de um único fornecedor internacional é uma decisão estratégica, e perfeitamente viável do ponto de vista técnico e financeiro.</p>
+
+<p><a href="https://librecode.coop">Converse com a equipe da LibreCode</a> para agendar um diagnóstico técnico da sua atual estrutura de e-mail, nuvem e colaboração, e descubra como desenhar um ambiente seguro e hospedado no Brasil: librecode.coop.</p>
+        </div>
+
+                    <section id="blog-author" class="lc-author" data-reveal="up">
+                                    <img class="lc-author__avatar" src="/site-preview/pr-preview/pr-414/assets/images/logo/librecode_author.jpg" alt="LibreCode">
+                                <div class="lc-author__body">
+                    <p class="lc-author__kicker">Escrito por</p>
+                    <h2 class="lc-author__name">LibreCode</h2>
+                    <p class="lc-author__bio">We are a digital cooperative of experts in free software development</p>
+                                    </div>
+            </section>
+            </article>
+
+            <section class="lc-more lc-section--ink">
+            <div class="lc-shell">
+                <div class="lc-head" data-reveal="up">
+                    <p class="lc-eyebrow">Continue lendo</p>
+                    <h2>Mais do nosso blog</h2>
+                </div>
+
+                <div class="lc-journal__grid lc-journal__grid--ink" data-reveal="stagger">
+                                            <article class="lc-post-card lc-post-card--ink">
+                            <a class="lc-post-card__media" href="/site-preview/pr-preview/pr-414/posts/o-que-e-assinatura-digital-tipos-vantagens-e-como-obter" tabindex="-1" aria-hidden="true">
+                                <img src="/site-preview/pr-preview/pr-414/assets/images/posts/o-que-e-uma-assinatura-digital/cover.jpg" alt="" loading="lazy">
+                            </a>
+                            <div class="lc-post-card__body">
+                                <time class="lc-post-card__date" datetime="2025-02-18">18 de fevereiro de 2025</time>
+                                <h3 class="lc-post-card__title">
+                                    <a href="/site-preview/pr-preview/pr-414/posts/o-que-e-assinatura-digital-tipos-vantagens-e-como-obter">O que é Assinatura Digital? Tipos, vantagens e como obter?</a>
+                                </h3>
+                                <span class="lc-post-card__read">Ler artigo <span aria-hidden="true">→</span></span>
+                            </div>
+                        </article>
+                                            <article class="lc-post-card lc-post-card--ink">
+                            <a class="lc-post-card__media" href="/site-preview/pr-preview/pr-414/posts/cooperativismo-e-tecnologia-a-uniao-que-transforma" tabindex="-1" aria-hidden="true">
+                                <img src="/site-preview/pr-preview/pr-414/assets/images/posts/cooperativismo-e-tecnologia/cover.jpg" alt="" loading="lazy">
+                            </a>
+                            <div class="lc-post-card__body">
+                                <time class="lc-post-card__date" datetime="2024-10-09">9 de outubro de 2024</time>
+                                <h3 class="lc-post-card__title">
+                                    <a href="/site-preview/pr-preview/pr-414/posts/cooperativismo-e-tecnologia-a-uniao-que-transforma">Cooperativismo e Tecnologia - A união que transforma!</a>
+                                </h3>
+                                <span class="lc-post-card__read">Ler artigo <span aria-hidden="true">→</span></span>
+                            </div>
+                        </article>
+                                            <article class="lc-post-card lc-post-card--ink">
+                            <a class="lc-post-card__media" href="/site-preview/pr-preview/pr-414/posts/os-7-principios-do-cooperativismo" tabindex="-1" aria-hidden="true">
+                                <img src="/site-preview/pr-preview/pr-414/assets/images/posts/os-7-principios-do-cooperativismo/cover.jpg" alt="" loading="lazy">
+                            </a>
+                            <div class="lc-post-card__body">
+                                <time class="lc-post-card__date" datetime="2024-05-28">28 de maio de 2024</time>
+                                <h3 class="lc-post-card__title">
+                                    <a href="/site-preview/pr-preview/pr-414/posts/os-7-principios-do-cooperativismo">Os 7 princípios do cooperativismo</a>
+                                </h3>
+                                <span class="lc-post-card__read">Ler artigo <span aria-hidden="true">→</span></span>
+                            </div>
+                        </article>
+                                    </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+    <div class="footer-top">
+        <div class="lc-footer">
+            <div class="lc-footer__grid">
+
+                <div class="lc-footer__brand">
+                    <img src="/site-preview/pr-preview/pr-414/assets/images/logo/librecode.png" alt="LibreCode">
+                    <p>Cooperativa digital de especialistas em desenvolvimento de software livre. Tecnologia com transparência e liberdade.</p>
+                    <div class="social-links">
+                        <a href="https://t.me/LibreCodeCoop" class="telegram" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/librecodecoop/" class="facebook" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/librecodecoop/" class="instagram" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/librecodecoop" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/company/librecode/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="lc-footer__col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="/site-preview/pr-preview/pr-414/#about">Quem somos</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/#why-us">Soluções</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/#clients">Clientes</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/#apoie">Apoie</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/posts">Blog</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/jobs">Coopere Conosco</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/brand">Marca e pronúncia</a></li>
+                    </ul>
+                </div>
+
+                <div class="lc-footer__col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="tel:+552120422073">+55 (21) 2042-2073</a></li>
+                        <li><a href="mailto:contato@librecode.coop">contato@librecode.coop</a></li>
+                        <li><a href="/site-preview/pr-preview/pr-414/#contact">Fale conosco</a></li>
+                    </ul>
+                    <div class="lc-footer__coop" style="margin-top:26px">
+                        <a href="https://www.somos.coop.br/" target="_blank" rel="noopener" aria-label="Somos Coop">
+                            <img src="/site-preview/pr-preview/pr-414/assets/images/logo/somoscoop-horizontal-light.png" alt="Somos Coop">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lc-footer__bottom">
+                <div class="copyright">
+                    &copy; 2026 <strong>LibreCode</strong> — Todos os direitos reservados
+                </div>
+                <div class="credits">
+                    Feito com software livre em <a href="https://www.somos.coop.br/" target="_blank" rel="noopener">cooperação</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="/site-preview/pr-preview/pr-414/assets/build/js/main.js?id=29ba7fa164f365e1bafc9783659a8b10" type="text/javascript"></script>
+  
+  <script type="module" src="/site-preview/pr-preview/pr-414/assets/build/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="/site-preview/pr-preview/pr-414/assets/build/ionicons/ionicons.js"></script>
+
+  <!-- Must load after the bundle above, which exposes the GSAP globals it uses -->
+  <script src="/site-preview/pr-preview/pr-414/assets/js/librecode-motion.js"></script>
+<script>
+  var lightbox = GLightbox();
+  var lightboxDescription = GLightbox({ selector: '.glightbox2' });
+  var lightboxVideo = GLightbox({ selector: '.glightbox3' });
+  var lightboxInlineIframe = GLightbox({ selector: '.glightbox4' });
+</script>
+
+    
+        <!-- Chatwoot widget -->
+    <script>
+      (function (documentRef, scriptTagName) {
+        var chatwootBaseUrl = "https://chatwoot.librecode.coop";
+        var chatwootScript = documentRef.createElement(scriptTagName);
+        var firstScriptTag = documentRef.getElementsByTagName(scriptTagName)[0];
+        chatwootScript.src = chatwootBaseUrl + "/packs/js/sdk.js";
+        chatwootScript.async = true;
+        firstScriptTag.parentNode.insertBefore(chatwootScript, firstScriptTag);
+        chatwootScript.onload = function () {
+          window.chatwootSDK.run({
+            websiteToken: '1FWLmSUAXnZd8qhUB5rsPCdq',
+            baseUrl: chatwootBaseUrl
+          });
+        };
+      })(document, "script");
+    </script>
+    </body>
+</html>
